@@ -83,5 +83,28 @@ public class AdminController implements Initializable {
 				
 			}
         });
+        
+        adminAddPatient.setOnAction(new EventHandler<ActionEvent>(){
+
+			@Override
+			public void handle(ActionEvent event) {
+				// TODO Auto-generated method stub
+				Parent home_page_parent = null;
+				  
+				  try {
+					home_page_parent = FXMLLoader.load(getClass().getResource("AddPatient.fxml"));
+				  } catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				  }
+				  
+				  Scene home_page_scene = new Scene(home_page_parent);
+				  Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+				  app_stage.setScene(home_page_scene);
+				  app_stage.show(); 
+				
+			}
+			
+		});
 	}
 }
