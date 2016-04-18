@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="496.0" prefWidth="569.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hospitalManagement.AdminController">
+   <children>
+      <Label layoutX="164.0" layoutY="31.0" prefHeight="37.0" prefWidth="283.0" text="Medi-Quick Administrator ">
+         <font>
+            <Font name="Arial Black" size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="adminAddPatient" layoutY="99.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="283.0" text="Add Patient" />
+      <Button fx:id="adminAddStaff" layoutX="285.0" layoutY="99.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="283.0" text="Add Staff" />
+      <Text fx:id="adminPendingRequests" layoutX="164.0" layoutY="241.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0 PENDING REQUESTS">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Button fx:id="adminAllotments" layoutX="216.0" layoutY="248.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="139.0" text="Allot Now" />
+      <Button fx:id="adminRoomStatus" layoutY="381.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="205.0" text="Room Status" />
+      <Button fx:id="adminStaffStatus" layoutY="338.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="283.0" text="Staff Status" />
+      <Button fx:id="adminPatients" layoutX="285.0" layoutY="338.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="283.0" text="Patients" />
+      <Button fx:id="adminAllotmentLogs" layoutX="168.0" layoutY="427.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="231.0" text="Allotment Logs" />
+      <Button fx:id="adminBack" layoutY="-1.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="72.0" text="Back" />
+      <Button fx:id="adminDoctorAppointments" layoutX="203.0" layoutY="381.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="162.0" text="Doctor Appointments" />
+      <Button fx:id="adminEquipmentStatus" layoutX="362.0" layoutY="381.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="205.0" text="Equipment Status" />
+      <ImageView fx:id="adminImage" fitHeight="91.0" fitWidth="113.0" layoutX="454.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true" />
+   </children>
+</AnchorPane>
