@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="503.0" prefWidth="524.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hospitalManagement.AdmitPatient">
+   <children>
+      <Label layoutX="213.0" layoutY="31.0" prefHeight="41.0" prefWidth="163.0" text="Admit">
+         <font>
+            <Font name="Cambria" size="36.0" />
+         </font>
+      </Label>
+      <Label layoutX="138.0" layoutY="166.0" prefHeight="27.0" prefWidth="90.0" text="Date From">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <DatePicker fx:id="admitDateFrom" layoutX="255.0" layoutY="164.0" prefHeight="31.0" prefWidth="173.0" />
+      <Label layoutX="138.0" layoutY="261.0" text="Room Type">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <Button fx:id="backButton" mnemonicParsing="false" text="Back" />
+      <Button fx:id="submitButton" layoutX="213.0" layoutY="371.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="90.0" text="Submit" />
+      <ComboBox fx:id="admitRoomType" layoutX="258.0" layoutY="262.0" prefHeight="25.0" prefWidth="173.0" />
+      <Label fx:id="confirmedLabel" layoutX="138.0" layoutY="435.0" prefHeight="17.0" prefWidth="260.0" visible="false" />
+   </children>
+</AnchorPane>

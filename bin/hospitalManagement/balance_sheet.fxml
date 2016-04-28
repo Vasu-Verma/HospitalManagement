@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="anchorpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="481.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hospitalManagement.BalanceSheet">
+   <children>
+      <Label layoutX="172.0" layoutY="46.0" prefHeight="36.0" prefWidth="241.0" text="Balance Sheet">
+         <font>
+            <Font name="Britannic Bold" size="36.0" />
+         </font>
+      </Label>
+      <SplitPane dividerPositions="0.010582010582010581" layoutX="-1.0" layoutY="102.0" orientation="VERTICAL" prefHeight="380.0" prefWidth="600.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" />
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="371.0" prefWidth="636.0">
+               <children>
+                  <TableView fx:id="tableRooms" layoutY="180.0" prefHeight="191.0" prefWidth="598.0">
+                    <columns>
+                      <TableColumn fx:id="tableRooms_room" prefWidth="95.0" text="Room" />
+                        <TableColumn fx:id="tableRooms_Days" prefWidth="92.0" text="Days" />
+                        <TableColumn fx:id="tableRooms_type" prefWidth="133.0" text="Type" />
+                        <TableColumn fx:id="tableRooms_costperday" prefWidth="129.0" text="Cost Per Day" />
+                      <TableColumn fx:id="tableRooms_amount" prefWidth="148.0" text="Amount" />
+                    </columns>
+                  </TableView>
+                  <TableView fx:id="tableAppointments" layoutX="-1.0" prefHeight="140.0" prefWidth="598.0">
+                    <columns>
+                      <TableColumn fx:id="tableAppointments_doctor" prefWidth="220.0" text="Doctor" />
+                      <TableColumn fx:id="tableAppointments_date" prefWidth="149.0" text="Date" />
+                        <TableColumn fx:id="tableAppointments_amount" prefWidth="225.0" text="Amount" />
+                    </columns>
+                  </TableView>
+                  <Label fx:id="Total_amount" layoutX="307.0" layoutY="314.0" />
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+      <Button fx:id="backButton" layoutY="2.0" mnemonicParsing="false" text="Back" />
+      <Label fx:id="totalAmount" layoutX="198.0" layoutY="12.0" prefHeight="29.0" prefWidth="289.0" text="Total Amount:">
+         <font>
+            <Font name="Broadway" size="16.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

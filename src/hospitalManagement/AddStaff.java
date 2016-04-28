@@ -1,7 +1,5 @@
 package hospitalManagement;
 
-
-
 import java.io.IOException;
 import java.net.URL;
 import java.sql.DriverManager;
@@ -20,49 +18,56 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-public class AddPatients implements Initializable{
+public class AddStaff implements Initializable{
 
     @FXML
-    private TextField addPatientLName;
+    private Button addStaffBack;
 
     @FXML
-    private TextField addPatientPNumber;
+    private TextField addStaffPNumber;
 
     @FXML
-    private TextField addPatientFName;
+    private Button addStaffConfirm;
 
     @FXML
-    private TextArea addPatientAddress;
+    private Label addStaffSuccessLabel;
 
     @FXML
-    private Button addPatientBack;
+    private TextField addStaffLName;
 
     @FXML
-    private Button addPatientConfirm;
+    private TextArea addStaffAddress;
+
+    @FXML
+    private ChoiceBox<String> addSTaffJob;
+
+    @FXML
+    private TextField addStaffSalary;
+
+    @FXML
+    private Label addStaffFailedLabel;
+
+    @FXML
+    private TextField addStaffFName;
     
     @FXML
-    private Label InvalidNumberLabel;
+    private Label addStaffInvalidNumber;
 
-    @FXML
-    private Label AddingFailedLabel;
-    
-    @FXML
-    private Label addingSuccessfulLabel;
-    
 	@Override
-	public void initialize(URL location, ResourceBundle resources) {
+	public void initialize(URL arg0, ResourceBundle arg1) {
 		// TODO Auto-generated method stub
-		addingSuccessfulLabel.setVisible(false);
-		AddingFailedLabel.setVisible(false);
-		InvalidNumberLabel.setVisible(false);
+		addSTaffJob.getItems().addAll("Doctor", "Nurse", "Accountant","Other Staff");
+		addStaffFailedLabel.setVisible(false);
+		addStaffSuccessLabel.setVisible(false);
+		addStaffInvalidNumber.setVisible(false);
 		
-        
-		addPatientBack.setOnAction(new EventHandler<ActionEvent>(){
+		addStaffBack.setOnAction(new EventHandler<ActionEvent>(){
 
 			@Override
 			public void handle(ActionEvent event) {
@@ -83,15 +88,17 @@ public class AddPatients implements Initializable{
 			}
 		});
 		
-		addPatientConfirm.setOnAction(new EventHandler<ActionEvent>(){
+		addStaffConfirm.setOnAction(new EventHandler<ActionEvent>(){
 
 			@Override
 			public void handle(ActionEvent event) {
-				// TODO Auto-generated method stub
-				String FirstName = addPatientFName.getText();
-				String LastName = addPatientLName.getText();
-				String PhoneNumber = addPatientPNumber.getText();
-				String Address = addPatientAddress.getText();
+				String FirstName = addStaffFName.getText();
+				String LastName = addStaffLName.getText();
+				String PhoneNumber = addStaffPNumber.getText();
+				String Salary = addStaffSalary.getText();
+				String Address = addStaffAddress.getText();
+				String Job = addSTaffJob.getValue();
+				
 				Integer id=0 ;
 				int flag=0;
 				if(FirstName.equals("")==false && LastName.equals("")==false && Address.equals("")==false){
@@ -110,37 +117,38 @@ public class AddPatients implements Initializable{
 		            		if(flag==0){
 		            			String sqlQuery1 = "INSERT INTO hospitaldatabase.loginusers " +
 						                   "VALUES ("+id+",'"+PhoneNumber+"','"+PhoneNumber+"');";
-		            			String sqlQuery2 = "INSERT INTO hospitaldatabase.patients " +
+		            			String sqlQuery2 = "INSERT INTO hospitaldatabase.staff " +
 					                   "VALUES ("+id+",'"+FirstName+"','"+LastName
-					                   +"','"+Address+"','"+PhoneNumber+"',0);";
+					                   +"','"+Job+"',"+Salary+",'"+PhoneNumber+"','"+Address+"');";
 		   
-		            			addingSuccessfulLabel.setText("Patient Added Successfully: Username:"+PhoneNumber+" and Password:"+PhoneNumber);
-		            			addingSuccessfulLabel.setVisible(true);
-		            			InvalidNumberLabel.setVisible(false);
-		            			AddingFailedLabel.setVisible(false);
+		            			addStaffSuccessLabel.setText("Staff Member Added Successfully: Username:"+PhoneNumber+" and Password:"+PhoneNumber);
+		            			addStaffSuccessLabel.setVisible(true);
+		            			addStaffInvalidNumber.setVisible(false);
+		            			addStaffFailedLabel.setVisible(false);
 		            			s.executeUpdate(sqlQuery1);
 		            			s.executeUpdate(sqlQuery2);
 		            		}
 		            		else{
-		            			AddingFailedLabel.setVisible(true);
-		            			addingSuccessfulLabel.setVisible(false);
-		            			InvalidNumberLabel.setVisible(false);
+		            			addStaffFailedLabel.setVisible(true);
+		            			addStaffSuccessLabel.setVisible(false);
+		            			addStaffInvalidNumber.setVisible(false);
 		            		}
 						}catch(Exception e){
 							e.printStackTrace();
 						}
 					
 					}else{
-						AddingFailedLabel.setVisible(false);
-						InvalidNumberLabel.setVisible(true);
-						addingSuccessfulLabel.setVisible(false);
+						addStaffFailedLabel.setVisible(false);
+						addStaffInvalidNumber.setVisible(true);
+						addStaffSuccessLabel.setVisible(false);
 					}
 				}
 			}
+			
+		
 		});
-		
-		
-		
 	}
+
+
 
 }

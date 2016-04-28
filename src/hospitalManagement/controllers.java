@@ -47,6 +47,8 @@ public class controllers implements Initializable {
     @FXML
     private ImageView AppLogo;
 	
+    public static int ID= 0;
+    
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub
 		File file = new File("src/img.jpg");
@@ -82,7 +84,37 @@ public class controllers implements Initializable {
 	        					"SELECT * FROM hospitaldatabase.loginusers where username ='" + name + 
             	          "' and password ='" + pass + "'");
 	        			if(RS.next()){	
-		    				System.out.println("Successful login"); 
+		    				System.out.println("Successful login");
+		    				ID = RS.getInt("User_Id");
+		    				System.out.println(ID);
+		    				int flag=1;
+		    				RS = S.executeQuery(
+		        					"SELECT * FROM hospitaldatabase.patients where P_id='"+ID+"'");
+		    				if(!RS.next()){
+		    					flag=2;
+		    					RS = S.executeQuery(
+			        					"SELECT * FROM hospitaldatabase.staff where staff_id='"+ID+"'");
+		    					System.out.println("staff");
+		    				}
+		    				if(flag==1){
+		    					Parent home_page_parent = null;
+		    					  
+		    					  try {
+		    						home_page_parent = FXMLLoader.load(getClass().getResource("PatientsHome.fxml"));
+		    					  } catch (IOException e) {
+		    						// TODO Auto-generated catch block
+		    						e.printStackTrace();
+		    					  }
+		    					  
+		    					  Scene home_page_scene = new Scene(home_page_parent);
+		    					  Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+		    					  app_stage.setScene(home_page_scene);
+		    					  app_stage.show(); 
+		    				}
+		    				else{
+		    					
+		    				}
+		    				
 		    			}
 		    			else{
 		    				System.out.println("UnSuccessful login");     

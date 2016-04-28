@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="635.0" prefWidth="568.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hospitalManagement.Book_appointment">
+   <children>
+      <Label layoutX="141.0" layoutY="56.0" prefHeight="59.0" prefWidth="312.0" text="(500 Rs. for each consultation)">
+         <font>
+            <Font name="Wingdings" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="71.0" layoutY="154.0" prefHeight="31.0" prefWidth="90.0" text="Speciality*">
+         <font>
+            <Font name="Yu Gothic Regular" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="76.0" layoutY="237.0" prefHeight="21.0" prefWidth="76.0" text="Doctor*">
+         <font>
+            <Font name="Yu Gothic Regular" size="18.0" />
+         </font>
+      </Label>
+      <DatePicker fx:id="DatePicker" layoutX="212.0" layoutY="314.0" prefHeight="31.0" prefWidth="142.0" />
+      <Label layoutX="81.0" layoutY="319.0" prefHeight="27.0" prefWidth="48.0" text="Date*">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="172.0" layoutY="28.0" text="Book Appointment">
+         <font>
+            <Font name="Wingdings" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="77.0" layoutY="385.0" text="Consultation Regarding: ">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="ConsultationInfo" layoutX="212.0" layoutY="424.0" prefHeight="91.0" prefWidth="251.0" />
+      <Button fx:id="Back_button" mnemonicParsing="false" text="Back" />
+      <Button fx:id="SubmitButton" layoutX="188.0" layoutY="565.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="21.0" prefWidth="123.0" text="Submit">
+         <font>
+            <Font size="9.0" />
+         </font>
+      </Button>
+      <ComboBox fx:id="SpecialityDropdown" layoutX="205.0" layoutY="157.0" onAction="#Change" prefWidth="150.0" />
+      <ComboBox fx:id="DoctorDropdown" layoutX="205.0" layoutY="235.0" prefWidth="150.0" />
+      <Label fx:id="ConfirmedLabel" layoutX="89.0" layoutY="597.0" prefHeight="17.0" prefWidth="357.0" visible="false" />
+   </children>
+</AnchorPane>
