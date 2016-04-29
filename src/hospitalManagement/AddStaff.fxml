@@ -13,19 +13,18 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="86.0" layoutY="116.0" prefHeight="17.0" prefWidth="73.0" text="First Name" />
-      <Label layoutX="86.0" layoutY="154.0" prefHeight="17.0" prefWidth="73.0" text="Last Name" />
-      <Label layoutX="87.0" layoutY="191.0" text="Phone Number" />
+      <Label layoutX="86.0" layoutY="83.0" prefHeight="17.0" prefWidth="73.0" text="First Name" />
+      <Label layoutX="86.0" layoutY="125.0" prefHeight="17.0" prefWidth="73.0" text="Last Name" />
+      <Label layoutX="88.0" layoutY="167.0" text="Phone Number" />
       <Label layoutX="85.0" layoutY="296.0" text="Address" />
-      <Label layoutX="87.0" layoutY="228.0" text="Job" />
-      <Label layoutX="85.0" layoutY="261.0" text="Salary(in Rs.)" />
-      <TextField fx:id="addStaffFName" layoutX="281.0" layoutY="112.0" />
-      <TextField fx:id="addStaffLName" layoutX="281.0" layoutY="150.0" />
-      <TextField fx:id="addStaffPNumber" layoutX="281.0" layoutY="187.0" />
-      <TextField fx:id="addStaffSalary" layoutX="281.0" layoutY="257.0" />
-      <TextArea fx:id="addStaffAddress" layoutX="281.0" layoutY="296.0" prefHeight="64.0" prefWidth="177.0" />
-      <ChoiceBox fx:id="addSTaffJob" layoutX="281.0" layoutY="224.0" prefWidth="150.0" />
-      <Button fx:id="addStaffConfirm" layoutX="229.0" layoutY="382.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="99.0" text="Add Staff" />
+      <Label layoutX="88.0" layoutY="210.0" text="Speciality" />
+      <Label layoutX="83.0" layoutY="253.0" text="Salary(in Rs.)" />
+      <TextField fx:id="addStaffFName" layoutX="281.0" layoutY="79.0" />
+      <TextField fx:id="addStaffLName" layoutX="281.0" layoutY="121.0" />
+      <TextField fx:id="addStaffPNumber" layoutX="282.0" layoutY="163.0" />
+      <TextField fx:id="addStaffSalary" layoutX="281.0" layoutY="249.0" />
+      <TextArea fx:id="addStaffAddress" layoutX="281.0" layoutY="287.0" prefHeight="64.0" prefWidth="177.0" />
+      <Button fx:id="addStaffConfirm" layoutX="230.0" layoutY="375.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="99.0" text="Add Staff" />
       <Label fx:id="addStaffSuccessLabel" layoutX="78.0" layoutY="407.0" text="Staff Added Successfully--&gt; Username:8800614086 Password:8800614086" textFill="#23d016" visible="false">
          <font>
             <Font name="System Bold" size="12.0" />
@@ -38,5 +37,6 @@
          </font>
       </Label>
       <Label fx:id="addStaffInvalidNumber" layoutX="455.0" layoutY="191.0" text="Invalid Number" textFill="#d01919" visible="false" />
+      <TextField fx:id="addStaffSpeciality" layoutX="281.0" layoutY="206.0" />
    </children>
 </AnchorPane>

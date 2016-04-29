@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="454.0" prefWidth="467.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hospitalManagement.DoctorHome">
+   <children>
+      <TableView fx:id="tableDocAppointments" layoutY="95.0" prefHeight="359.0" prefWidth="467.0">
+        <columns>
+          <TableColumn fx:id="tablePatientName" prefWidth="148.0" text="Patient Name" />
+          <TableColumn fx:id="tableDate" prefWidth="98.0" text="Date" />
+            <TableColumn fx:id="tableInformation" prefWidth="220.0" text="Information" />
+        </columns>
+      </TableView>
+      <Label layoutX="66.0" layoutY="38.0" text="YOUR CONFIRMED APPOINTMENTS">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+      <Button fx:id="backButton" layoutY="2.0" mnemonicParsing="false" text="Back" />
+   </children>
+</AnchorPane>

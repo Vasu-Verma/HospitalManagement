@@ -111,8 +111,20 @@ public class controllers implements Initializable {
 		    					  app_stage.setScene(home_page_scene);
 		    					  app_stage.show(); 
 		    				}
-		    				else{
-		    					
+		    				else if(flag==2){
+		    					Parent home_page_parent = null;
+		    					  
+		    					  try {
+		    						home_page_parent = FXMLLoader.load(getClass().getResource("DoctorHome.fxml"));
+		    					  } catch (IOException e) {
+		    						// TODO Auto-generated catch block
+		    						e.printStackTrace();
+		    					  }
+		    					  
+		    					  Scene home_page_scene = new Scene(home_page_parent);
+		    					  Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+		    					  app_stage.setScene(home_page_scene);
+		    					  app_stage.show(); 
 		    				}
 		    				
 		    			}

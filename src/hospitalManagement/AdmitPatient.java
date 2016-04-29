@@ -51,7 +51,7 @@ public class AdmitPatient implements Initializable {
 	
 		
 		ObservableList<String> data = FXCollections.observableArrayList(
-				"General Ward",
+				"General ward",
 				"VIP ward",
 				"Maternity ward"				
 				);
@@ -94,7 +94,7 @@ public class AdmitPatient implements Initializable {
 					String date2 = date.toString();
 					String type = admitRoomType.getValue();
 					String query = "INSERT into hospitaldatabase.roomrequest VALUES ("+
-							id+",'"+date2+"','Requested','"+type+"',"+pid+");";
+							id+",'"+date2+"','Requested','"+type+"',"+pid+",'current',null);";
 					if(date2!=null && type!=null){
         				S.executeUpdate(query);
         				confirmedLabel.setText("Request Sent");

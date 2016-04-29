@@ -44,8 +44,6 @@ public class AddStaff implements Initializable{
     @FXML
     private TextArea addStaffAddress;
 
-    @FXML
-    private ChoiceBox<String> addSTaffJob;
 
     @FXML
     private TextField addStaffSalary;
@@ -58,11 +56,13 @@ public class AddStaff implements Initializable{
     
     @FXML
     private Label addStaffInvalidNumber;
+    
+    @FXML
+    private TextField addStaffSpeciality;
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// TODO Auto-generated method stub
-		addSTaffJob.getItems().addAll("Doctor", "Nurse", "Accountant","Other Staff");
 		addStaffFailedLabel.setVisible(false);
 		addStaffSuccessLabel.setVisible(false);
 		addStaffInvalidNumber.setVisible(false);
@@ -97,7 +97,8 @@ public class AddStaff implements Initializable{
 				String PhoneNumber = addStaffPNumber.getText();
 				String Salary = addStaffSalary.getText();
 				String Address = addStaffAddress.getText();
-				String Job = addSTaffJob.getValue();
+				String Job = "Doctor";
+				String Speciality = addStaffSpeciality.getText();
 				
 				Integer id=0 ;
 				int flag=0;
@@ -119,8 +120,8 @@ public class AddStaff implements Initializable{
 						                   "VALUES ("+id+",'"+PhoneNumber+"','"+PhoneNumber+"');";
 		            			String sqlQuery2 = "INSERT INTO hospitaldatabase.staff " +
 					                   "VALUES ("+id+",'"+FirstName+"','"+LastName
-					                   +"','"+Job+"',"+Salary+",'"+PhoneNumber+"','"+Address+"');";
-		   
+					                   +"','"+Job+"',"+Salary+",'"+PhoneNumber+"','"+Address+"','"+Speciality+"');";
+		            			System.out.println(sqlQuery2);
 		            			addStaffSuccessLabel.setText("Staff Member Added Successfully: Username:"+PhoneNumber+" and Password:"+PhoneNumber);
 		            			addStaffSuccessLabel.setVisible(true);
 		            			addStaffInvalidNumber.setVisible(false);

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="459.0" prefWidth="483.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hospitalManagement.EquipmentView">
+   <children>
+      <TableView fx:id="tableEquipments" layoutY="105.0" prefHeight="354.0" prefWidth="483.0">
+        <columns>
+          <TableColumn fx:id="tableEquipmentId" prefWidth="111.0" text="Equipment Id" />
+          <TableColumn fx:id="tableEquipmentName" prefWidth="371.0" text="Equipment Name" />
+        </columns>
+      </TableView>
+      <Label layoutX="171.0" layoutY="34.0" prefHeight="30.0" prefWidth="141.0" text="EQUIPMENT">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Button fx:id="backButton" layoutY="2.0" mnemonicParsing="false" text="Back" />
+   </children>
+</AnchorPane>

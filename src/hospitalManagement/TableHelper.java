@@ -38,23 +38,19 @@ public class TableHelper {
 		this.Amount=new SimpleIntegerProperty(Amount);
 	}
 	
-	public String getDoctorName()
-	{
+	public String getDoctorName(){
 		return DoctorName.get();
 	}
 
-	public String getDate()
-	{
+	public String getDate(){
 		return date.get();
 	}
 
-	public String getStatus()
-	{
+	public String getStatus(){
 		return Status.get();
 	}
 	
-	public String getInfo()
-	{
+	public String getInfo(){
 		return Info.get();
 	}
 	public Integer getCost(){
@@ -78,49 +74,39 @@ public class TableHelper {
 	}
 
 	
-	public void setDoctorName(String name)
-	{
+	public void setDoctorName(String name){
 		this.DoctorName.set(name);
 	}
 
-	public void setDate(String date)
-	{
+	public void setDate(String date){
 		this.date.set(date);
 	}
 
-	public void setInfo(String info)
-	{
+	public void setInfo(String info){
 		this.Info.set(info);
 	}
 
-	public void setStatus(String status)
-	{
+	public void setStatus(String status){
 		this.Status.set(status);
 	}
 	
-	public void setCost(Integer Cost)
-	{
+	public void setCost(Integer Cost){
 		this.Cost.set(Cost);
 	}
 	
-	public void setRoomNumber(Integer RoomNumber)
-	{
+	public void setRoomNumber(Integer RoomNumber){
 		this.RoomNumber.set(RoomNumber);
 	}
-	public void setDays(Integer Days)
-	{
+	public void setDays(Integer Days){
 		this.Days.set(Days);
 	}
-	public void setType(String Cost)
-	{
+	public void setType(String Cost){
 		this.Type.set(Cost);
 	}
-	public void setCostperDay(Integer Cost)
-	{
+	public void setCostperDay(Integer Cost){
 		this.CostperDay.set(Cost);
 	}
-	public void setAmount(Integer Cost)
-	{
+	public void setAmount(Integer Cost){
 		this.Amount.set(Cost);
 	}
 }

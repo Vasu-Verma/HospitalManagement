@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="559.0" prefWidth="668.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hospitalManagement.AppointmentResolution">
+   <children>
+      <TableView fx:id="tableAppointments" layoutY="141.0" prefHeight="209.0" prefWidth="668.0">
+        <columns>
+            <TableColumn fx:id="tableAppointmentsId" prefWidth="132.0" text="Appointment Id" />
+          <TableColumn fx:id="tableAppointmentsPatientName" prefWidth="111.0" text="Patient Name" />
+          <TableColumn fx:id="tableAppointmentsDoctorName" prefWidth="144.0" text="Doctor Name" />
+            <TableColumn fx:id="tableAppointmentsStatus" prefWidth="92.0" text="Status" />
+            <TableColumn fx:id="tableAppointmentsDate" prefWidth="133.0" text="Date" />
+        </columns>
+      </TableView>
+      <TableView fx:id="tableRoomRequests" layoutY="350.0" prefHeight="209.0" prefWidth="668.0">
+        <columns>
+          <TableColumn fx:id="tableRoomRequestsId" prefWidth="81.0" text="Request Id" />
+          <TableColumn fx:id="tableRoomRequestsPatientName" minWidth="0.0" prefWidth="109.0" text="Patient Name" />
+            <TableColumn fx:id="tableRoomRequestsType" prefWidth="100.0" text="Room Type" />
+            <TableColumn fx:id="tableRoomRequestsStatus" prefWidth="90.0" text="Status" />
+            <TableColumn fx:id="tableRoomRequestsAdmitDate" prefWidth="91.0" text="Admit Date" />
+            <TableColumn fx:id="tableRoomRequestsReleaseDate" prefWidth="98.0" text="Release Date" />
+            <TableColumn fx:id="tableRoomRequestsNumber" prefWidth="98.0" text="RoomNumber" />
+        </columns>
+      </TableView>
+      <ComboBox fx:id="requestTypeComboBox" layoutX="14.0" layoutY="74.0" onAction="#RequestTypeHandler" prefWidth="150.0" />
+      <ComboBox fx:id="requestIdComboBox" layoutX="177.0" layoutY="74.0" onAction="#RequestIdHandler" prefWidth="150.0" />
+      <ComboBox fx:id="updateComboBox" layoutX="346.0" layoutY="74.0" onAction="#RequestUpdateHandler" prefWidth="150.0" />
+      <Label layoutX="26.0" layoutY="51.0" prefHeight="21.0" prefWidth="99.0" text="Request Type">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="185.0" layoutY="51.0" text="Request ID">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="356.0" layoutY="51.0" text="Update/Decline">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="244.0" layoutY="14.0" text="REQUESTS">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Button fx:id="backButton" layoutX="5.0" layoutY="2.0" mnemonicParsing="false" text="Back" />
+      <Button fx:id="updateButton" layoutX="275.0" layoutY="107.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="104.0" text="Update" />
+      <ComboBox fx:id="requestsRoomNumberComboBox" layoutX="504.0" layoutY="74.0" prefWidth="150.0" />
+      <Label layoutX="504.0" layoutY="53.0" text="Room Number">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

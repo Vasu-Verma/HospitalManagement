@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="416.0" prefWidth="515.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hospitalManagement.StaffManagement">
+   <children>
+      <TableView fx:id="tableStaff" layoutY="142.0" prefHeight="275.0" prefWidth="515.0">
+        <columns>
+          <TableColumn fx:id="tableStaffName" prefWidth="151.0" text="Name" />
+          <TableColumn fx:id="tableStaffJob" prefWidth="105.0" text="Job" />
+            <TableColumn fx:id="tableStaffSalary" prefWidth="134.0" text="Salary" />
+            <TableColumn fx:id="tableStaffEmployeeId" prefWidth="124.0" text="Employee Id" />
+        </columns>
+      </TableView>
+      <Label layoutX="182.0" layoutY="15.0" text="Staff Details">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Button fx:id="backButton" layoutY="2.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="55.0" text="Back" />
+      <ComboBox fx:id="staffIdComboBox" layoutX="195.0" layoutY="76.0" prefWidth="150.0" />
+      <Button fx:id="staffReleaseButton" layoutX="385.0" layoutY="76.0" mnemonicParsing="false" text="Release" />
+      <Label layoutX="16.0" layoutY="53.0" prefHeight="27.0" prefWidth="169.0" text="Release Employee">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="100.0" layoutY="80.0" prefHeight="17.0" prefWidth="75.0" text="Employee Id" />
+   </children>
+</AnchorPane>

@@ -60,7 +60,7 @@ public class Book_appointment implements Initializable{
     		Connection conn1 = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/?user=root");
     		Statement S = (Statement) conn1.createStatement();
     		System.out.println(controllers.ID);
-    		String query= "SELECT * FROM hospitaldatabase.doctorspecialities,hospitaldatabase.staff where Doctor_id=staff_id and Speciality='"+ SpecialityChoice+"'";
+    		String query= "SELECT * FROM hospitaldatabase.staff where Speciality='"+ SpecialityChoice+"'";
     		ResultSet RS = S.executeQuery(query	);
     		
     		ArrayList<String> list = new ArrayList<String>();
@@ -85,7 +85,7 @@ public class Book_appointment implements Initializable{
     		Connection conn1 = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/?user=root");
     		Statement S = (Statement) conn1.createStatement();
     		System.out.println(controllers.ID);
-    		String query= "SELECT distinct(speciality) FROM hospitaldatabase.doctorspecialities";
+    		String query= "SELECT distinct(speciality) FROM hospitaldatabase.staff";
     		ResultSet RS = S.executeQuery(query	);
     		
     		ArrayList<String> list = new ArrayList<String>();
@@ -149,7 +149,7 @@ public class Book_appointment implements Initializable{
             			String sqlQuery1 = "INSERT INTO hospitaldatabase.appointments " +
 				                   "VALUES ("+id+","+controllers.ID+","+Doctor_id+",'"+Date.toString()+"','"+
 				                   Info+"','Requested');";
-            			
+            			System.out.println(sqlQuery1);
             			if(Doctor_id!=null && Date!=null && Info!=null){
             				S.executeUpdate(sqlQuery1);
             				ConfirmedLabel.setText("Appointment Request Sent");

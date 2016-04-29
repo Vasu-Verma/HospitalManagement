@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="418.0" prefWidth="464.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hospitalManagement.RoomStatus">
+   <children>
+      <TableView fx:id="tableRoom" layoutY="70.0" prefHeight="350.0" prefWidth="464.0">
+        <columns>
+          <TableColumn fx:id="tableRoomRoomNumber" prefWidth="116.0" text="Room Number" />
+          <TableColumn fx:id="tableRoomType" prefWidth="123.0" text="Type" />
+            <TableColumn fx:id="tableRoomStatus" prefWidth="98.0" text="Status" />
+            <TableColumn fx:id="tableRoomOccupiedBy" prefWidth="126.0" text="Occupied By" />
+        </columns>
+      </TableView>
+      <Text layoutX="159.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ROOM STATUS" wrappingWidth="123.642578125">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Button fx:id="backButton" layoutY="2.0" mnemonicParsing="false" text="Back" />
+   </children>
+</AnchorPane>

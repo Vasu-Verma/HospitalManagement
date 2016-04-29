@@ -3,7 +3,12 @@ package hospitalManagement;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.util.ResourceBundle;
+
+import com.mysql.jdbc.Connection;
+import com.mysql.jdbc.Statement;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -63,8 +68,22 @@ public class AdminController implements Initializable {
 		File file = new File("src/img.jpg");
         Image image = new Image(file.toURI().toString());
         adminImage.setImage(image);
-        
-        
+        int pending=0;
+        try{
+        	Connection conn1 = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/?user=root");
+    		Statement S = (Statement) conn1.createStatement();
+    		String query1= "SELECT COUNT(*) FROM hospitaldatabase.appointments where Status='Requested'";
+    		String query2="SELECT COUNT(*) FROM hospitaldatabase.roomrequest where Status='Requested'";
+    		ResultSet RS = S.executeQuery(query1);
+    		RS.next();
+    		pending = pending + RS.getInt("Count(*)");
+    		RS = S.executeQuery(query2);
+    		RS.next();
+    		pending = pending + RS.getInt("Count(*)");
+    		adminPendingRequests.setText(pending+" Requests Pending");
+        }catch(Exception r){
+        	r.printStackTrace();
+        }
         adminBack.setOnAction(new EventHandler<ActionEvent>(){
 			@Override
 			public void handle(ActionEvent event) {
@@ -127,6 +146,140 @@ public class AdminController implements Initializable {
 				
 			}
 		});
+        
+        adminStaffStatus.setOnAction(new EventHandler<ActionEvent>(){
+
+			@Override
+			public void handle(ActionEvent event) {
+				// TODO Auto-generated method stub
+				Parent home_page_parent = null;
+				  
+				  try {
+					home_page_parent = FXMLLoader.load(getClass().getResource("StaffManagement.fxml"));
+				  } catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				  }
+				  
+				  Scene home_page_scene = new Scene(home_page_parent);
+				  Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+				  app_stage.setScene(home_page_scene);
+				  app_stage.show(); 
+				
+			}
+		});
+        
+        adminPatients.setOnAction(new EventHandler<ActionEvent>(){
+
+			@Override
+			public void handle(ActionEvent event) {
+				// TODO Auto-generated method stub
+				Parent home_page_parent = null;
+				  
+				  try {
+					home_page_parent = FXMLLoader.load(getClass().getResource("PatientStatus.fxml"));
+				  } catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				  }
+				  
+				  Scene home_page_scene = new Scene(home_page_parent);
+				  Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+				  app_stage.setScene(home_page_scene);
+				  app_stage.show(); 
+				
+			}
+		});
+        
+        adminRoomStatus.setOnAction(new EventHandler<ActionEvent>(){
+
+			@Override
+			public void handle(ActionEvent event) {
+				// TODO Auto-generated method stub
+				Parent home_page_parent = null;
+				  
+				  try {
+					home_page_parent = FXMLLoader.load(getClass().getResource("RoomStatus.fxml"));
+				  } catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				  }
+				  
+				  Scene home_page_scene = new Scene(home_page_parent);
+				  Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+				  app_stage.setScene(home_page_scene);
+				  app_stage.show(); 
+				
+			}
+		});
+        
+        adminAllotments.setOnAction(new EventHandler<ActionEvent>(){
+
+			@Override
+			public void handle(ActionEvent event) {
+				// TODO Auto-generated method stub
+				Parent home_page_parent = null;
+				  
+				  try {
+					home_page_parent = FXMLLoader.load(getClass().getResource("AppointmentResolution.fxml"));
+				  } catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				  }
+				  
+				  Scene home_page_scene = new Scene(home_page_parent);
+				  Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+				  app_stage.setScene(home_page_scene);
+				  app_stage.show(); 
+				
+			}
+		});
+        
+        adminDoctorAppointments.setOnAction(new EventHandler<ActionEvent>(){
+
+			@Override
+			public void handle(ActionEvent event) {
+				// TODO Auto-generated method stub
+				Parent home_page_parent = null;
+				  
+				  try {
+					home_page_parent = FXMLLoader.load(getClass().getResource("Appointments.fxml"));
+				  } catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				  }
+				  
+				  Scene home_page_scene = new Scene(home_page_parent);
+				  Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+				  app_stage.setScene(home_page_scene);
+				  app_stage.show(); 
+				
+			}
+		});
+        
+        adminEquipmentStatus.setOnAction(new EventHandler<ActionEvent>(){
+
+			@Override
+			public void handle(ActionEvent event) {
+				// TODO Auto-generated method stub
+				Parent home_page_parent = null;
+				  
+				  try {
+					home_page_parent = FXMLLoader.load(getClass().getResource("EquipmentView.fxml"));
+				  } catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				  }
+				  
+				  Scene home_page_scene = new Scene(home_page_parent);
+				  Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+				  app_stage.setScene(home_page_scene);
+				  app_stage.show(); 
+				
+			}
+		});
+        
+        
         
 	}
 }

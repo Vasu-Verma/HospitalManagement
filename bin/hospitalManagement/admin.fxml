@@ -25,7 +25,6 @@
       <Button fx:id="adminRoomStatus" layoutY="381.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="205.0" text="Room Status" />
       <Button fx:id="adminStaffStatus" layoutY="338.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="283.0" text="Staff Status" />
       <Button fx:id="adminPatients" layoutX="285.0" layoutY="338.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="283.0" text="Patients" />
-      <Button fx:id="adminAllotmentLogs" layoutX="168.0" layoutY="427.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="231.0" text="Allotment Logs" />
       <Button fx:id="adminBack" layoutY="-1.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="72.0" text="Back" />
       <Button fx:id="adminDoctorAppointments" layoutX="203.0" layoutY="381.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="162.0" text="Doctor Appointments" />
       <Button fx:id="adminEquipmentStatus" layoutX="362.0" layoutY="381.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="205.0" text="Equipment Status" />
